@@ -213,6 +213,7 @@ set encoding=utf-8
 set complete+=kspell
 set spelllang=en
 set wildmenu
+set number
 set relativenumber
 set expandtab 
 set shiftwidth=4
