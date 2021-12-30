@@ -1,0 +1,36 @@
+cmd open ${{
+    case $(file --mime-type "$f" -bL) in
+        text/*|application/json) $EDITOR "$f";;
+        *) xdg-open "$f" ;;
+    esac
+}}
+
+cmd mkdir ${{
+  printf "Directory Name: "
+  read ans
+  mkdir $ans
+}}
+
+cmd mkfile ${{
+  printf "File Name: "
+  read ans
+  $EDITOR $ans
+}}
+
+cmd config ${{
+  $EDITOR ~/.config/lf/lfrc
+}}
+
+# mappings
+map d
+map m
+
+map dd delete
+map md mkdir
+map mf mkfile
+
+map gd cd ~/Desktop
+map ~ cd
+
+map r rename
+map <enter> open
