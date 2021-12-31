@@ -1,0 +1,9 @@
+{
+    //prettier
+    "coc.preferences.formatOnSaveFiletypes": ["javascript, json", "scss", "css"],
+    "prettier.tabWidth": 4,
+
+    //diagnostic signs
+    "diagnostic.errorSign": "E",
+    "diagnostic.warningSign":"W",
+}
