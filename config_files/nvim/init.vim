@@ -118,7 +118,6 @@ let g:indexed_search_numbered_only = 1
 
 "auto completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-let g:coc_global_extensions = ['coc-vimlsp', 'coc-tsserver', 'coc-prettier', 'coc-html', 'coc-css', 'coc-pyright', 'coc-json', '@yaegassy/coc-pylsp', 'coc-sumneko-lua']
 
 inoremap <expr> <TAB> pumvisible() ? "\<DOWN>" : "\<TAB>"
 inoremap <expr> <S-TAB> pumvisible() ? "\<UP>" : "\<TAB>"
@@ -200,6 +199,7 @@ call plug#end()
 if install_plugins == 1
     echo "Installing plugins..."
     silent! PlugInstall
+    let g:coc_global_extensions = ['coc-vimlsp', 'coc-tsserver', 'coc-prettier', 'coc-html', 'coc-css', 'coc-pyright', 'coc-json', '@yaegassy/coc-pylsp', 'coc-sumneko-lua']
     echo "Done!"
     silent! CocConfig
     q
