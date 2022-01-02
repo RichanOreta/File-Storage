@@ -67,3 +67,7 @@ padding:
 
 window:
   decorations: none
+
+font:
+  normal:
+    family: JetBrains Mono Nerd Font
