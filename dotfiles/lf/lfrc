@@ -21,9 +21,11 @@ cmd config ${{
   $EDITOR ~/.config/lf/lfrc
 }}
 
+
 # mappings
 map d
 map m
+map y
 
 map dd delete
 map md mkdir
@@ -34,3 +36,5 @@ map ~ cd
 
 map r rename
 map <enter> open
+map yy copy
+map p paste
