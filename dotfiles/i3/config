@@ -233,7 +233,7 @@ exec_always feh --bg-scale /usr/share/backgrounds/wallpaper/wallpaper.jpg
 exec --no-startup-id picom --experimental-backends
 
 #activate polybar
-exec_always ~/.config/polybar/launch.sh
+exec_always sh ~/.config/polybar/launch.sh
 
 # Create Log out, Reboot, Poweroff bindings
 mode "(S)uspend, (L)ogout, (R)eboot, (P)oweroff" {
