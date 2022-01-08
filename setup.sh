@@ -26,3 +26,5 @@ doas cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
 doas reflector --fastest 15 --latest 15 --score 15 --sort rate --save /etc/pacman.d/mirrorlist
 
 yay --sudo doas --save
+
+source ./install_packages.sh
