@@ -11,3 +11,17 @@ curl -o ~/.config/polybar/config --create-dirs https://raw.githubusercontent.com
 curl -o ~/.config/polybar/launch.sh --create-dirs https://raw.githubusercontent.com/RichanOreta/File-Storage/master/dotfiles/polybar/launch.sh
 
 curl -o ~/.bashrc --create-dirs https://raw.githubusercontent.com/RichanOreta/File-Storage/master/dotfiles/bash/.bashrc
+
+doas pacman -Rns sudo
+doas ln -s /usr/bin/doas /usr/bin/sudo
+
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+
+doas pacman -S reflector
+doas cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
+doas reflector --fastest 15 --latest 15 --score 15 --sort rate --save /etc/pacman.d/mirrorlist
+
+yay --sudo doas --save
+yay -S --needed - < packages.txt --cleanafter
