@@ -1,3 +1,5 @@
+#!/bin/sh
+
 curl -o ~/.config/alacritty/alacritty.yml --create-dirs https://raw.githubusercontent.com/RichanOreta/File-Storage/master/dotfiles/alacritty/alacritty.yml
 
 curl -o ~/.config/i3/config --create-dirs https://raw.githubusercontent.com/RichanOreta/File-Storage/master/dotfiles/i3/config
@@ -24,4 +26,4 @@ doas cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
 doas reflector --fastest 15 --latest 15 --score 15 --sort rate --save /etc/pacman.d/mirrorlist
 
 yay --sudo doas --save
-yay -S --needed - < ./packages.txt --cleanafter
+yay -S --needed - < packages.txt --cleanafter
