@@ -9,3 +9,5 @@ curl -o ~/.config/nvim/init.vim --create-dirs https://raw.githubusercontent.com/
 curl -o ~/.config/polybar/config --create-dirs https://raw.githubusercontent.com/RichanOreta/File-Storage/master/dotfiles/polybar/config
 
 curl -o ~/.config/polybar/launch.sh --create-dirs https://raw.githubusercontent.com/RichanOreta/File-Storage/master/dotfiles/polybar/launch.sh
+
+curl -o ~/.bashrc --create-dirs https://raw.githubusercontent.com/RichanOreta/File-Storage/master/dotfiles/bash/.bashrc
