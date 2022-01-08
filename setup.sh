@@ -27,3 +27,5 @@ doas reflector --fastest 15 --latest 15 --score 15 --sort rate --save /etc/pacma
 
 yay --sudo doas --save
 yay -S --needed - < packages.txt --cleanafter
+
+cat packages.txt | xargs yay -S --needed --cleanafter
