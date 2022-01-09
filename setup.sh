@@ -26,6 +26,7 @@ doas cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
 reflector --fastest 15 --latest 15 --score 15 --sort rate --save mirrorlist
 doas rankmirrors mirrorlist > /etc/pacman.d/mirrorlist
 rm mirrorlist
+doas pacman -Syyy
 
 yay --sudo doas --save
 curl https://raw.githubusercontent.com/RichanOreta/File-Storage/master/packages.txt | yay -S --cleanafter --needed -
