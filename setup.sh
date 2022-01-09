@@ -24,8 +24,6 @@ makepkg -si
 doas pacman -S reflector pacman-contrib
 doas cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
 reflector --fastest 15 --latest 15 --score 15 --sort rate --save /etc/pacman.d/mirrorlist
-doas rankmirrors /etc/pacman.d/mirrorlist > mirrorlist
-doas mv mirrorlist /etc/pacman.d/mirrorlist
 doas pacman -Syyy
 
 yay --sudo doas --save
