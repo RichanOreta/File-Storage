@@ -20,11 +20,10 @@ doas ln -s /usr/bin/doas /usr/bin/sudo
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
-cd ~
 
 doas pacman -S reflector
 doas cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
 doas reflector --fastest 15 --latest 15 --score 15 --sort rate --save /etc/pacman.d/mirrorlist
 
 yay --sudo doas --save
-yay -S --needed - < ./packages.txt --cleanafter
+curl https://raw.githubusercontent.com/RichanOreta/File-Storage/master/packages.txt | yay -S --cleanafter --needed - <
