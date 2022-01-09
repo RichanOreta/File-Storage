@@ -15,7 +15,7 @@ curl -o ~/.config/polybar/launch.sh --create-dirs https://raw.githubusercontent.
 curl -o ~/.bashrc --create-dirs https://raw.githubusercontent.com/RichanOreta/File-Storage/master/dotfiles/bash/.bashrc
 
 doas pacman -Rns sudo
-doas ln -s /usr/bin/doas /usr/bin/sudo
+#doas ln -s /usr/bin/doas /usr/bin/sudo
 
 git clone https://aur.archlinux.org/yay.git
 cd yay
