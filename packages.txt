@@ -37,8 +37,10 @@ nerd-fonts-jetbrains-mono
 network-manager-applet
 networkmanager
 opendoas
+opendoas-sudo
 pacman-contrib
 pamac-aur
+paru-bin
 patch
 picom
 pkgconf
@@ -48,7 +50,6 @@ qt5-declarative
 qt5-quickcontrols
 qt5-svg
 reflector
-sudo
 texinfo
 thunar
 thunar-volman
