@@ -52,9 +52,9 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = "JetBrains Mono Nerd Font:size=10;1"
-font-1 = fixed:pixelsize=10;1
-font-2 = unifont:fontformat=truetype:size=8:antialias=false;0
+font-0 = "JetBrains Mono Nerd Font:size=8;0"
+font-1 = fixed:pixelsize=5;1
+font-2 = unifont:fontformat=truetype:size=3:antialias=false;0
 font-3 = siji:pixelsize=10;1
 
 modules-left = bspwm i3
@@ -62,7 +62,7 @@ modules-left = bspwm i3
 ;modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
 modules-right = filesystem xbacklight pulseaudio memory cpu wlan eth battery temperature date powermenu
 
-tray-position = none
+tray-position = right
 tray-padding = 2
 ;tray-background = #0063ff
 
@@ -130,7 +130,7 @@ label-empty-foreground = ${colors.foreground-alt}
 label-empty-padding = 2
 
 ; Separator in between workspaces
-; label-separator = |
+label-separator = |
 
 [module/i3]
 type = internal/i3
@@ -167,7 +167,7 @@ label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
 
 ; Separator in between workspaces
-; label-separator = |
+label-separator = |
 
 
 [module/mpd]
