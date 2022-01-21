@@ -60,7 +60,7 @@ font-3 = siji:pixelsize=10;1
 modules-left = bspwm i3
 ;modules-center = mpd
 ;modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
-modules-right = filesystem xbacklight pulseaudio memory cpu wlan eth battery temperature date powermenu
+modules-right = filesystem packages xbacklight pulseaudio memory cpu wlan eth battery temperature date popup-calendar powermenu
 
 tray-position = right
 tray-padding = 2
@@ -110,6 +110,14 @@ label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 
+[module/packages]
+type = custom/script
+internal = 5
+
+exec = pacman -Qqe | wc -l
+label = "Packages: %output%"
+label-underline = #7de324
+
 [module/bspwm]
 type = internal/bspwm
 
@@ -149,11 +157,13 @@ label-mode-background = ${colors.primary}
 label-focused = %index%
 label-focused-background = ${colors.background-alt}
 label-focused-underline= ${colors.primary}
-label-focused-padding = 2
+label-focused-foreground = #ffffff
+label-focused-padding = 1
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %index%
-label-unfocused-padding = 2
+label-unfocused-padding = 1
+label-unfocused-foreground = #a1a1a1
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %index%
@@ -164,7 +174,7 @@ label-visible-padding = ${self.label-focused-padding}
 ; urgent = Workspace with urgency hint set
 label-urgent = %index%
 label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
+label-urgent-padding = 1
 
 ; Separator in between workspaces
 label-separator = |
@@ -260,20 +270,17 @@ format-disconnected =
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
 [module/date]
-type = internal/date
+type = custom/script
 interval = 5
 
-date =
-date-alt = " %Y-%m-%d"
-
-time = %H:%M
-time-alt = %H:%M:%S
+exec = date '+%Y-%m-%d (%a) %H:%M'
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #0a6cf5
 
-label = %date% %time%
+label = "%output%"
+click-left = ~/.config/polybar-scripts/popup-calendar.sh --popup &
 
 [module/pulseaudio]
 type = internal/pulseaudio
