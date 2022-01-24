@@ -12,12 +12,12 @@
 #doas ln -s /usr/bin/doas /usr/bin/sudo
 
 #git clone https://github.com/RichanOreta/File-Storage
-cd File-Storage
-mv wallpaper /usr/share/backgrounds
+#cd File-Storage
+mv wallpaper/ /usr/share/backgrounds/
 mv dmenu/dmenu/ ~
 cd dotfiles
 mv bash/.bashrc ~
-mv i3 ~/.config
+mv i3/ ~/.config
 mv alacritty ~/.config
 mv polybar ~/.config
 mv polybar-scripts ~/.config
@@ -26,11 +26,11 @@ cd ~/dmenu
 make install
 cd
 
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
+su richan
+sh yay.sh
+exit
 
-sed -i '/ParallelDownloads/s/^#//g' /etc/pacman.conf
+#sed -i '/ParallelDownloads/s/^#//g' /etc/pacman.conf
 pacman -S reflector pacman-contrib
 cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
 reflector --fastest 15 --latest 15 --score 15 --sort rate --protocol https --save /etc/pacman.d/mirrorlist
