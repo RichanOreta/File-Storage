@@ -17,7 +17,7 @@ mv wallpaper/ /usr/share/backgrounds/
 mv dmenu/dmenu/ ~
 cd dotfiles
 mv bash/.bashrc ~
-mv i3/ ~/.config
+mv i3/ ~/.config/i3
 mv alacritty ~/.config
 mv polybar ~/.config
 mv polybar-scripts ~/.config
