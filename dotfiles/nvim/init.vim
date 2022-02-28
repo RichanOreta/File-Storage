@@ -1,17 +1,17 @@
 let install_plugins = 0
 
 "installs vim-plug if not installed
-if has('unix') && empty(glob('~/.vim/autoload/plug.vim'))                    
-    :! curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    let install_plugins = 1
-elseif has('win32') && empty(glob('~/vimfiles/autoload/plug.vim'))
-    :! curl -fLo vimfiles/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    let install_plugins = 1
-elseif has('win32') && has('nvim') && empty(glob('~/AppData/Local/nvim/autoload/plug.vim'))
+if has('win32') && has('nvim') && empty(glob('~/AppData/Local/nvim/autoload/plug.vim'))
     :! curl -fLo AppData/Local/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     let install_plugins = 1
 elseif has('unix') && has('nvim') && empty(glob('~/.config/nvim/autoload/plug.vim'))
     :! curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    let install_plugins = 1
+elseif has('unix') && empty(glob('~/.vim/autoload/plug.vim'))                    
+    :! curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    let install_plugins = 1
+elseif has('win32') && empty(glob('~/vimfiles/autoload/plug.vim'))
+    :! curl -fLo vimfiles/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     let install_plugins = 1
 endif
 
